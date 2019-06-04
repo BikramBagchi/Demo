@@ -11,12 +11,19 @@ public class Util
 	public void openURl(WebDriver d , String URL , int time  )
 	{
 		d.get(URL);
-		d.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		d.manage().timeouts().pageLoadTimeout(time, TimeUnit.SECONDS);
 		
 	}
 	
 	protected void sendkeys(WebDriver d , String Xpath , String Value)
 	{
 		d.findElement(By.xpath(Xpath)).sendKeys(Value);
+	}
+	
+	public void openURl(WebDriver d , String URL   )
+	{
+		d.get(URL);
+		d.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		
 	}
 }
